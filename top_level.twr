@@ -1,0 +1,552 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml top_level.twx top_level.ncd -o top_level.twr top_level.pcf
+-ucf board.ucf
+
+Design file:              top_level.ncd
+Physical constraint file: top_level.pcf
+Device,package,speed:     xc6slx45,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 40709 paths analyzed, 2680 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.727ns.
+--------------------------------------------------------------------------------
+
+Paths for end point comm_fpga_fx2/count_16 (SLICE_X7Y121.CE), 14 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.273ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd33 (FF)
+  Destination:          comm_fpga_fx2/count_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.673ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd33 to comm_fpga_fx2/count_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.DQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A3     net (fanout=9)        1.572   swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.361   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_16
+    -------------------------------------------------  ---------------------------
+    Total                                     11.673ns (1.585ns logic, 10.088ns route)
+                                                       (13.6% logic, 86.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.723ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd32 (FF)
+  Destination:          comm_fpga_fx2/count_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.223ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd32 to comm_fpga_fx2/count_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.AQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A6     net (fanout=11)       1.122   swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.361   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_16
+    -------------------------------------------------  ---------------------------
+    Total                                     11.223ns (1.585ns logic, 9.638ns route)
+                                                       (14.1% logic, 85.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.826ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd34 (FF)
+  Destination:          comm_fpga_fx2/count_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.118ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.021ns (0.485 - 0.506)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd34 to comm_fpga_fx2/count_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y95.AQ      Tcko                  0.447   swled_app/state_FSM_FFd37
+                                                       swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A5     net (fanout=10)       1.017   swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.361   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_16
+    -------------------------------------------------  ---------------------------
+    Total                                     11.118ns (1.585ns logic, 9.533ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point comm_fpga_fx2/count_0 (SLICE_X7Y121.CE), 14 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.310ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd33 (FF)
+  Destination:          comm_fpga_fx2/count_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.636ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd33 to comm_fpga_fx2/count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.DQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A3     net (fanout=9)        1.572   swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.324   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.636ns (1.548ns logic, 10.088ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.760ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd32 (FF)
+  Destination:          comm_fpga_fx2/count_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.186ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd32 to comm_fpga_fx2/count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.AQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A6     net (fanout=11)       1.122   swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.324   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.186ns (1.548ns logic, 9.638ns route)
+                                                       (13.8% logic, 86.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.863ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd34 (FF)
+  Destination:          comm_fpga_fx2/count_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.081ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.021ns (0.485 - 0.506)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd34 to comm_fpga_fx2/count_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y95.AQ      Tcko                  0.447   swled_app/state_FSM_FFd37
+                                                       swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A5     net (fanout=10)       1.017   swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.324   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_0
+    -------------------------------------------------  ---------------------------
+    Total                                     11.081ns (1.548ns logic, 9.533ns route)
+                                                       (14.0% logic, 86.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point comm_fpga_fx2/count_1 (SLICE_X7Y121.CE), 14 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     8.318ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd33 (FF)
+  Destination:          comm_fpga_fx2/count_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.628ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd33 to comm_fpga_fx2/count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.DQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A3     net (fanout=9)        1.572   swled_app/state_FSM_FFd33
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.316   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.628ns (1.540ns logic, 10.088ns route)
+                                                       (13.2% logic, 86.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.768ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd32 (FF)
+  Destination:          comm_fpga_fx2/count_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.178ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.019ns (0.485 - 0.504)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd32 to comm_fpga_fx2/count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y93.AQ      Tcko                  0.447   swled_app/state_FSM_FFd33
+                                                       swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A6     net (fanout=11)       1.122   swled_app/state_FSM_FFd32
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.316   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.178ns (1.540ns logic, 9.638ns route)
+                                                       (13.8% logic, 86.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     8.871ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               swled_app/state_FSM_FFd34 (FF)
+  Destination:          comm_fpga_fx2/count_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      11.073ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.021ns (0.485 - 0.506)
+  Source Clock:         fx2Clk_in_BUFGP rising at 0.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: swled_app/state_FSM_FFd34 to comm_fpga_fx2/count_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X10Y95.AQ      Tcko                  0.447   swled_app/state_FSM_FFd37
+                                                       swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A5     net (fanout=10)       1.017   swled_app/state_FSM_FFd34
+    SLICE_X13Y103.A      Tilo                  0.259   swled_app/state_txstart_next1111
+                                                       swled_app/state_f2hValid_out1
+    SLICE_X27Y124.D5     net (fanout=8)        3.824   f2hValid
+    SLICE_X27Y124.D      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/driveBus_inv1
+    SLICE_X27Y124.C6     net (fanout=18)       0.126   comm_fpga_fx2/driveBus_inv
+    SLICE_X27Y124.C      Tilo                  0.259   comm_fpga_fx2/count<15>
+                                                       comm_fpga_fx2/_n0207_inv1
+    SLICE_X7Y121.CE      net (fanout=5)        4.566   comm_fpga_fx2/_n0207_inv
+    SLICE_X7Y121.CLK     Tceck                 0.316   comm_fpga_fx2/count<1>
+                                                       comm_fpga_fx2/count_1
+    -------------------------------------------------  ---------------------------
+    Total                                     11.073ns (1.540ns logic, 9.533ns route)
+                                                       (13.9% logic, 86.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point swled_app/u_rx/bitcntr_2 (SLICE_X36Y110.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.397ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               swled_app/u_rx/bitcntr_1 (FF)
+  Destination:          swled_app/u_rx/bitcntr_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.397ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: swled_app/u_rx/bitcntr_1 to swled_app/u_rx/bitcntr_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y110.BQ     Tcko                  0.200   swled_app/u_rx/bitcntr<1>
+                                                       swled_app/u_rx/bitcntr_1
+    SLICE_X36Y110.B5     net (fanout=2)        0.076   swled_app/u_rx/bitcntr<1>
+    SLICE_X36Y110.CLK    Tah         (-Th)    -0.121   swled_app/u_rx/bitcntr<1>
+                                                       swled_app/u_rx/Mcount_bitcntr_xor<2>11
+                                                       swled_app/u_rx/bitcntr_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.397ns (0.321ns logic, 0.076ns route)
+                                                       (80.9% logic, 19.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point swled_app/data_0 (SLICE_X12Y105.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               swled_app/dec/P_24 (FF)
+  Destination:          swled_app/data_0 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.410ns (Levels of Logic = 1)
+  Clock Path Skew:      0.002ns (0.033 - 0.031)
+  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: swled_app/dec/P_24 to swled_app/data_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y105.AQ     Tcko                  0.198   swled_app/dec/P<27>
+                                                       swled_app/dec/P_24
+    SLICE_X12Y105.B6     net (fanout=2)        0.022   swled_app/dec/P<24>
+    SLICE_X12Y105.CLK    Tah         (-Th)    -0.190   swled_app/data<0>
+                                                       swled_app/GND_23_o_dec_output[0]_Select_297_o<8>
+                                                       swled_app/data_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.410ns (0.388ns logic, 0.022ns route)
+                                                       (94.6% logic, 5.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point swled_app/enc/Cp_1 (SLICE_X4Y99.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.412ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               swled_app/enc/Cp_1 (FF)
+  Destination:          swled_app/enc/Cp_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.412ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fx2Clk_in_BUFGP rising at 20.000ns
+  Destination Clock:    fx2Clk_in_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: swled_app/enc/Cp_1 to swled_app/enc/Cp_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y99.AQ       Tcko                  0.200   swled_app/enc/Cp<4>
+                                                       swled_app/enc/Cp_1
+    SLICE_X4Y99.A6       net (fanout=2)        0.022   swled_app/enc/Cp<1>
+    SLICE_X4Y99.CLK      Tah         (-Th)    -0.190   swled_app/enc/Cp<4>
+                                                       swled_app/enc/Mmux_Cp[31]_P[31]_mux_13_OUT121
+                                                       swled_app/enc/Cp_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.412ns (0.390ns logic, 0.022ns route)
+                                                       (94.7% logic, 5.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "fx2Clk_in" 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.270ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: fx2Clk_in_BUFGP/BUFG/I0
+  Logical resource: fx2Clk_in_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y7.I0
+  Clock network: fx2Clk_in_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 19.570ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: reset_btn/count<3>/CLK
+  Logical resource: reset_btn/count_0/CK
+  Location pin: SLICE_X0Y88.CLK
+  Clock network: fx2Clk_in_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.570ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: reset_btn/count<3>/CLK
+  Logical resource: reset_btn/count_1/CK
+  Location pin: SLICE_X0Y88.CLK
+  Clock network: fx2Clk_in_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock fx2Clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fx2Clk_in      |   11.727|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 40709 paths, 0 nets, and 4175 connections
+
+Design statistics:
+   Minimum period:  11.727ns{1}   (Maximum frequency:  85.273MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Apr 15 11:06:11 2018 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 459 MB
+
+
+

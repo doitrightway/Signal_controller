@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ankit/vhdl_programs/final_project/top_level.ncd
+OUTFILE=/home/ankit/vhdl_programs/final_project/top_level.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=/home/ankit/vhdl_programs/final_project
+LICENSE=WebPack
+USER_INFO=211460591_0_0_434
